@@ -11,7 +11,7 @@ S : GUICE
 //Testing Requirements R3, R5
 //[S]tudent Search by last name of exisitng student, triggering the [B]us option
 //expected output: KRAKE, VALENTIN, 56
-S : KRAKE BEAN
+S : KRAKE B
 
 //TC-3
 //Testing Requirements R3, R4
