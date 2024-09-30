@@ -4,11 +4,11 @@ public class Student {
     private int grade;
     private int classroom;
     private int bus;
-    private int GPA;
+    private double GPA;
     private String tLastName;
     private String tFirstName;
 
-    public Student(String stLastName, String stFirstName, int grade, int classroom, int bus, int GPA, String tLastName, String tFirstName) {
+    public Student(String stLastName, String stFirstName, int grade, int classroom, int bus, double GPA, String tLastName, String tFirstName) {
         this.stLastName = stLastName;
         this.stFirstName = stFirstName;
         this.grade = grade;
@@ -34,7 +34,7 @@ public class Student {
     public int getBus() {
         return bus;
     }
-    public int getGpa() {
+    public double getGpa() {
         return GPA;
     }
     public String getTeacherLastName() {

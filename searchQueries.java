@@ -1,13 +1,24 @@
 import java.util.ArrayList;
 import java.util.List;
+
 public class searchQueries {
     // assuming we have a list of Student objects from reading the file called students
-    private List<Student> students = new ArrayList<>();
+    private List<Student> students;
+
+    public searchQueries(){
+        this.students = new ArrayList<>();
+    }
+
+    public void addStudent(Student student){
+        students.add(student);
+    }
 
     public void stLastNameSearch(String lastName) {
         for (Student student : students) {
             if (student.getStLastName().equals(lastName)) {
-                System.out.println(student.getGrade() + student.getClassroom() + student.getTeacherFirstName() + student.getTeacherLastName());
+                System.out.println("Student: " + student.getStLastName() + ", " + student.getStFirstName() + ", " + 
+                                    student.getGrade() + ", " + student.getClassroom() + ", " + student.getTeacherLastName() + ", "
+                                    + student.getTeacherFirstName());
             }
         }
     }
@@ -16,14 +27,14 @@ public class searchQueries {
         List<Student> busList = new ArrayList<>();
         for (Student student : students) {
             if (student.getStLastName().equals(lastName)) {
-                System.out.println(student.getStLastName() + student.getStFirstName() + student.getBus());
+                System.out.println(student.getStLastName() + ", " + student.getStFirstName() + ", " + student.getBus());
                 busList.add(student);
             }
         }
 
-        for (Student studentBus : busList) {
-            System.out.println(studentBus.getBus());
-        }
+        // for (Student studentBus : busList) {
+        //     System.out.println(studentBus.getBus());
+        // }
 
         return busList;
     }
@@ -34,19 +45,20 @@ public class searchQueries {
         for (Student student : students) {
             if (student.getTeacherLastName().equals(tLName)) {
                 TeacherStList.add(student);
-                System.out.println(student.getStLastName() + student.getStFirstName());
+                System.out.println(student.getStLastName() + ", " + student.getStFirstName());
             }
         }
 
         return TeacherStList;
-     }
+    }
+
     public List <Student> busSearch (int bus){
         List<Student> busRouteList = new ArrayList<>();
 
         for (Student student : students) {
             if (student.getBus() == bus ){
                 busRouteList.add(student);
-                System.out.println(student.getStLastName() + student.getStFirstName() + student.getGrade() + student.getClassroom());
+                System.out.println(student.getStLastName() + ", "+ student.getStFirstName() + ", " + student.getGrade() + ", " + student.getClassroom());
             }
         }
 
@@ -59,59 +71,85 @@ public class searchQueries {
         for (Student student : students) {
             if (student.getGrade() == grade){
                 gradeList.add(student);
-                System.out.println(student);
+                System.out.println("Student: " + student.getStLastName() + ", " + student.getStFirstName());
             }
         }
 
+        if(gradeList.isEmpty()){
+            System.out.println("No students found in grade " + grade);
+        }
         return gradeList;
-
     }
 
-    public int gradeAverage (int grade){
-        List<Student> gradeList = new ArrayList<>();
-        int avgGPA = 0;
+    public double gradeAverage (int grade){
+        double totalGPA = 0;
         int count = 0;
         for (Student student : students) {
             if (student.getGrade() == grade){
-                avgGPA += student.getGpa();
+                totalGPA += student.getGpa();
                 count ++;
             }
         }
-        System.out.println(avgGPA);
-        return avgGPA;
+        
+        if(count > 0){
+            double avgGPA = totalGPA/count;
+            System.out.println("Average GPA for grade " + grade + ": " + avgGPA);
+            return avgGPA;
+        }else{
+            System.out.println("No students found for grade " + grade);
+            return 0;
+        }
     }
 
-    public int highestGPA (int grade) {
-        //List<Student> GPAList = new ArrayList<>();
-        int highestGPA = 0;
+    public void highestGPA (int grade) {
+        double highestGPA = 0;
+        Student topStudent = null;
+
         for (Student student : students) {
-            if (student.getGrade() == grade) {
-                if (student.getGpa() >= highestGPA) {
-                    highestGPA = student.getGpa();
-                }
+            if (student.getGrade() == grade && student.getGpa() > highestGPA) {
+                highestGPA = student.getGpa();
+                topStudent = student;
             }
         }
-                System.out.println(highestGPA);
-                return highestGPA;
+        
+        if(topStudent != null){
+            System.out.println("Student with highest GPA: " + topStudent + "(GPA: " + highestGPA + ")");
+        }else{
+            System.out.println("No students found for grade " + grade);
+        }
     }
 
-    public int lowestGPA (int grade) {
-        //List<Student> GPAList = new ArrayList<>();
-        int lowestGPA = 100;
+    public void lowestGPA (int grade) {
+        double lowestGPA = 100;
+        Student lowStudent = null;
+
         for (Student student : students) {
-            if (student.getGrade() == grade) {
-                if (student.getGpa() <= lowestGPA) {
-                    lowestGPA = student.getGpa();
-                }
+            if (student.getGrade() == grade && student.getGpa() < lowestGPA) {
+                lowestGPA = student.getGpa();
+                lowStudent = student;
             }
         }
-        System.out.println(lowestGPA);
-        return lowestGPA;
+        
+        if(lowStudent != null){
+            System.out.println("Student with lowest GPA: " + lowStudent + "(GPA: " + lowestGPA + ")");
+        }else{
+            System.out.println("No students found for grade " + grade);
+        }
     }
 
+    public void info(){
+        int[] gradeCounts = new int[7];
 
+        for(Student student: students){
+            int grade = student.getGrade();
+            if(grade >= 0 && grade <= 6){
+                gradeCounts[grade]++;                 
+            }
+        }
 
-
-
+        for(int i = 0; i < gradeCounts.length; i++){
+            System.out.println("Grade " + i + ": " + gradeCounts[i] + " students");
+        }
+    }
 
 }
