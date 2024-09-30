@@ -1,0 +1,131 @@
+//CSC 365
+//Lab 1-a test suite
+
+//TC-1
+//Testing Requirements R3, R4
+//[S]tudent Search by lastname of existing student
+//expected output: GUICE, CODI, 4, 112, CHIONCHIO, PERLA
+S : GUICE
+
+//TC-2
+//Testing Requirements R3, R5
+//[S]tudent Search by last name of exisitng student, triggering the [B]us option
+//expected output: KRAKE, VALENTIN, 56
+S : KRAKE BEAN
+
+//TC-3
+//Testing Requirements R3, R4
+//[S]tudent Search by last name of non-existing student
+//expected output: <empty line>
+S : LOPEZ
+
+//TC-4
+//Testing Requirements R3, R6
+//[T]eacher search by tLastName
+//expected output: SCHOENECKER, PHUONG
+CLECKLER, FLOY
+KRAKE, VALENTIN
+CREMEANS, RANDOLPH
+KREESE, CARRIE
+T : GAMBREL
+
+//TC-5
+//Testing Requirements R3, R6
+//[T]eacher Search of non-existent teacher by tLastName
+//expected output: <empty line>
+T : LOPEZ
+
+//TC-6
+//Testing Requirements R3, R7
+//[G]rade Level Search by a number
+//expected output: COOKUS, XUAN
+ELHADDAD, SHANTE
+BRODERSEN, HYE
+SWEDLUND, SHARRI
+CIGANEK, MANIE
+COVINGTON, TOMAS
+EARLY, TORY
+LINHART, LELA
+THEUNISSEN, GRACE
+G : 3
+
+//TC-7
+//Testing Requirements R3, R7
+//[G]rade Level Search by a number w/out students
+//expected output: "No students found in grade 5"
+G : 5
+
+//TC-8
+//Testing Requirements R3, R8
+//[B]us Search on existent route
+//expected output: SWEDLUND, SHARRI, 3, 107
+ZAPPAVIGNA, ELLIOTT, 6, 106
+SAENPHIMMACHA, NUMBERS, 6, 111
+BOYTER, WAN, 6, 102
+KOZOLA, BUSTER, 2, 108
+DEMARTINI, DEWAYNE, 6, 102
+BEX, TAMESHA, 4, 105
+WERST, LEON, 6, 111
+LAMKIN, TAMA, 6, 111
+B : 55
+
+//TC-9 
+//Testing Requirements R3, R8
+//[B]us Search on non-existent route
+//expected output: <empty line>
+B : 111
+
+//TC-10
+//Testing Requirements R3, R9
+//[G]rade Level Search by a number and find [H]ighest grade
+//expected output: Student with highest GPA: SWEDLUND, SHARRI, 3.24, FAFARD, ROCIO, 55
+G : 3 H
+
+//TC-11
+//Testing Requirements R3, R9
+//[G]rade Level Search by a number and find [L]owest grade
+//expected output: Student with lowest GPA: CIGANEK, MANIE, 2.79, FAFARD, ROCIO, 53
+G : 3 L
+
+//TC-12
+//Testing Requirements R3, R10
+//[A]verage Search of a Grade Level
+//expected output: Average GPA for grade 2: 2.946153846153846
+A : 2
+
+//TC-12
+//Testing Requirements R3, R10
+//[A]verage Search of a Grade Level w/out students
+//expected output: No students found for grade 5
+A : 5
+
+//TC-13
+//Testing Requirements R3, R11
+//[I]nfo Search for total number of students
+//expected output: Grade 0: 0 students
+Grade 1: 2 students
+Grade 2: 13 students
+Grade 3: 9 students
+Grade 4: 15 students
+Grade 5: 0 students
+Grade 6: 21 students
+I 
+
+//TC-14 
+//Testing Requirements R3, R12
+//[Q]uit the program
+//expected output: Exiting the program
+Q
+
+//TC-15
+//Testing Requirements R3, E1
+//Testing for unknown commands
+//expected output: Unknown command.
+R : 2
+
+//TC-16
+//Testing Requirements R3, E1
+//Testing formating of user input
+//expected output: Invalid input format. Use the appropriate format
+W 
+

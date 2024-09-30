@@ -1,0 +1,83 @@
+Data loaded.
+Select from the following commands followed by a colon ':', a space, and lastname/number
+S[tudent]: <lastname> [B[us]]
+T[eacher]: <lastname>
+B[us]: <number>
+G[rade]: <number> [H[igh]|L[ow]]
+A[verage]: <number>
+I[nfo]
+Q[uit]
+
+Enter command: S : GUICE
+Student: GUICE, CODI, 4, 112, CHIONCHIO, PERLA
+
+Enter command: S : KRAKE B   
+KRAKE, VALENTIN, 56
+
+Enter command: S : LOPEZ
+
+Enter command: T : GAMBREL
+SCHOENECKER, PHUONG
+CLECKLER, FLOY
+KRAKE, VALENTIN
+CREMEANS, RANDOLPH
+KREESE, CARRIE
+
+Enter command: T : LOPEZ
+
+Enter command: G : 3
+COOKUS, XUAN
+ELHADDAD, SHANTE
+BRODERSEN, HYE
+SWEDLUND, SHARRI
+CIGANEK, MANIE
+COVINGTON, TOMAS
+EARLY, TORY
+LINHART, LELA
+THEUNISSEN, GRACE
+
+Enter command: G : 5
+No students found in grade 5
+
+Enter command: B : 55
+SWEDLUND, SHARRI, 3, 107
+ZAPPAVIGNA, ELLIOTT, 6, 106
+SAENPHIMMACHA, NUMBERS, 6, 111
+BOYTER, WAN, 6, 102
+KOZOLA, BUSTER, 2, 108
+DEMARTINI, DEWAYNE, 6, 102
+BEX, TAMESHA, 4, 105
+WERST, LEON, 6, 111
+LAMKIN, TAMA, 6, 111
+
+Enter command: B : 111
+
+Enter command: G : 3 H
+Student with highest GPA: SWEDLUND, SHARRI, 3.24, FAFARD, ROCIO, 55
+
+Enter command: G : 3 L
+Student with lowest GPA: CIGANEK, MANIE, 2.79, FAFARD, ROCIO, 53
+
+Enter command: A : 2
+Average GPA for grade 2: 2.946153846153846
+
+Enter command: A : 5
+No students found for grade 5
+
+Enter command: I
+Grade 0: 0 students
+Grade 1: 2 students
+Grade 2: 13 students
+Grade 3: 9 students
+Grade 4: 15 students
+Grade 5: 0 students
+Grade 6: 21 students
+
+Enter command: R : 2
+Unknown command.
+
+Enter command: W
+Invalid input format. Use the appropriate format
+
+Enter command: Q
+Exiting the program

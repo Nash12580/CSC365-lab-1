@@ -31,11 +31,6 @@ public class searchQueries {
                 busList.add(student);
             }
         }
-
-        // for (Student studentBus : busList) {
-        //     System.out.println(studentBus.getBus());
-        // }
-
         return busList;
     }
 
@@ -71,7 +66,7 @@ public class searchQueries {
         for (Student student : students) {
             if (student.getGrade() == grade){
                 gradeList.add(student);
-                System.out.println("Student: " + student.getStLastName() + ", " + student.getStFirstName());
+                System.out.println(student.getStLastName() + ", " + student.getStFirstName());
             }
         }
 
@@ -113,7 +108,8 @@ public class searchQueries {
         }
         
         if(topStudent != null){
-            System.out.println("Student with highest GPA: " + topStudent + "(GPA: " + highestGPA + ")");
+            System.out.println("Student with highest GPA: " + topStudent.getStLastName() + ", " + topStudent.getStFirstName() + ", " + highestGPA + 
+            ", " + topStudent.getTeacherLastName() + ", " + topStudent.getTeacherFirstName() + ", " + topStudent.getBus());
         }else{
             System.out.println("No students found for grade " + grade);
         }
@@ -131,7 +127,8 @@ public class searchQueries {
         }
         
         if(lowStudent != null){
-            System.out.println("Student with lowest GPA: " + lowStudent + "(GPA: " + lowestGPA + ")");
+            System.out.println("Student with lowest GPA: " + lowStudent.getStLastName() + ", " + lowStudent.getStFirstName() + ", " + lowestGPA + 
+            ", " + lowStudent.getTeacherLastName() + ", " + lowStudent.getTeacherFirstName() + ", " + lowStudent.getBus());
         }else{
             System.out.println("No students found for grade " + grade);
         }
